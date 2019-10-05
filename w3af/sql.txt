@@ -1,0 +1,23 @@
+plugins
+audit sqli, blind_sqli, ldapi, xpath
+crawl web_spider
+crawl config web_spider
+set only_forward True
+back
+output html_file
+output config html_file
+set output_file /root/Desktop/w3af/reports/report_SQL_injection.html
+back
+output text_file
+output config text_file
+set output_file /root/Desktop/w3af/reports/report_SQL_injection.txt
+save
+back
+back
+target
+set target http://php.testsparker.com/process.php?file=Generics/index.nsp
+save
+back
+cleanup
+start
+

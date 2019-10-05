@@ -1,0 +1,21 @@
+target
+set target 
+back
+plugins
+crawl phpinfo, robots_txt, sitemap_xml, user_dir, web_spider
+crawl config web_spider
+set only_forward True
+back
+audit deserialization
+grep serialized_object
+output html_file
+output config html_file
+set output_file /root/dev-sec-ops/w3af/reports/report_Insecure Deserialization.html
+back
+output text_file
+output config text_file
+set output_file /root/dev-sec-ops/w3af/reports/report_Insecure Deserialization.txt
+back 
+back
+start
+exit

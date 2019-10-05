@@ -1,0 +1,24 @@
+profiles
+use OWASP_TOP10
+back
+plugins
+crawl web_spider
+crawl config web_spider
+set only_forward True
+back
+output html_file
+output config html_file
+set output_file /root/Desktop/w3af/reports/report_OWASP_TOP10.html
+back
+output text_file
+output config text_file
+set output_file /root/Desktop/w3af/reports/report_OWASP_TOP10.txt
+save
+back
+back
+target
+set target http://192.168.1.150:2380/index.php?page=xml-validator.php
+save
+back
+cleanup
+start

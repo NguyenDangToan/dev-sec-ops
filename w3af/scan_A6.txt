@@ -1,0 +1,22 @@
+target
+set target http://192.168.1.96:8008/project_noi_that_nhua/chi-tiet-san-pham.php?id_product=26
+back
+plugins
+crawl oracle_discovery, phishtank, phpinfo, robots_txt, sitemap_xml, user_dir, web_spider
+crawl config web_spider
+set only_forward True
+back
+grep analyze_cookies, blank_body, clink_jacking, code_disclosure, directory_indexing, dom_xss, dot_net_event_validation, error_500, error_pages, file_upload, form_autocomplete, get_emails, html_comments, http_auth_detect, wsdl_greper, symfo
+ny, svn_users, ssn, password_profiling, path_disclosure, motw, lang, http_in_body
+audit un_ssl, htaccess_methods, global_redirect, dav
+output html_file
+output config html_file
+set output_file /root/dev-sec-ops/w3af/reports/report_A6.html
+back
+output text_file
+output config text_file
+set output_file /root/dev-sec-ops/w3af/reports/report_A6.txt
+back 
+back
+start
+

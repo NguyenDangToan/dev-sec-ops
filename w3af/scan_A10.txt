@@ -1,0 +1,20 @@
+target
+set target http://192.168.1.96:8008/project_noi_that_nhua/chi-tiet-san-pham.php?id_product=26
+back
+plugins
+crawl web_spider, user_dir, robots_txt, open_api, oracle_discovery, google_spider
+crawl config web_spider
+set only_forward True
+back
+audit htaccess_methods
+grep hash_analysis, get_emails, directory_indexing, analyze_cookies
+output html_file
+output config html_file
+set output_file /root/dev-sec-ops/w3af/reports/report_A10.html
+back
+output text_file
+output config text_file
+set output_file /root/dev-sec-ops/w3af/reports/report_A10.txt
+back 
+back
+start

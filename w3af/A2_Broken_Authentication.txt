@@ -1,0 +1,25 @@
+plugins
+grep all
+infrastructure afd, allowed_methods, detect_reverse_proxy, detect_transparent_proxy, dns_wildcard, dot_net_errors, find_vhosts, fingerprint_WAF, fingerprint_os, frontpage_version, halberd, hmap, php_eggs, server_header, server_status, shared_hosting
+crawl web_spider,bing_spider,oracle_discovery
+crawl config web_spider
+set only_forward True
+back
+audit csrf,deserialization,eval,frontpage,ssi,ssl_certificate,un_ssl
+output html_file
+output config html_file
+set output_file /root/Desktop/w3af/reports/report_A2_Broken_Authentication.html
+back
+output text_file
+output config text_file
+set output_file /root/Desktop/w3af/reports/report_A2_Broken_Authentication.txt
+save
+back
+back
+target
+set target http://192.168.1.96:8008/project_noi_that_nhua/chi-tiet-san-pham.php?id_product=24
+save
+back
+cleanup
+start
+

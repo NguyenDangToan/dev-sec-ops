@@ -1,0 +1,26 @@
+plugins
+grep all
+infrastructure afd, allowed_methods, detect_reverse_proxy, detect_transparent_proxy, dns_wildcard, dot_net_errors, find_vhosts, fingerprint_WAF, fingerprint_os, frontpage_version, halberd, hmap, php_eggs, server_header, server_status, shared_hosting
+crawl web_spider,bing_spider,oracle_discovery,user_dir,robots_txt
+crawl config web_spider
+set only_forward True
+back
+audit xxe,xst,websocket_hijacking,rfi, lfi
+output html_file
+output config html_file
+set output_file /root/Desktop/w3af/reports/report_A5_Broken_Access_Control.html
+back
+output text_file
+output config text_file
+set output_file /root/Desktop/w3af/reports/report_A5_Broken_Access_Control.txt
+save
+back
+back
+target
+set target http://192.168.1.150:2380/index.php?page=arbitrary-file-inclusion.php
+save
+back
+cleanup
+start
+
+

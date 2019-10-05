@@ -1,0 +1,24 @@
+plugins
+infrastructure afd, allowed_methods, detect_reverse_proxy, detect_transparent_proxy, dns_wildcard, dot_net_errors, find_vhosts, fingerprint_WAF, fingerprint_os, frontpage_version, halberd, hmap, php_eggs, server_header, server_status, shared_hosting
+crawl web_spider,dwsync_xml,genexus_xml,sitemap_xml
+crawl config web_spider
+set only_forward True
+back
+audit eval,frontpage,rfi,response_splitting,redos,preg_replace,phishing_vector,os_commanding,mx_injection,lfi,htaccess_methods,global_redirect,generic
+output html_file
+output config html_file
+set output_file /root/Desktop/w3af/reports/report_A4_XML_External_Entities.html
+back
+output text_file
+output config text_file
+set output_file /root/Desktop/w3af/reports/report_A4_XML_External_Entities.txt
+save
+back
+back
+target
+set target http://192.168.1.150:2380/index.php?page=phpmyadmin.php
+save
+back
+cleanup
+start
+
